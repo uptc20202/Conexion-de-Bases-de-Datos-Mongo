@@ -1,0 +1,66 @@
+<div class="space"></div>
+
+<div class="navbar">
+  <div class="left" >
+    <a (click)="homeRoute()"><img class="logo_freya" src="../../../assets/menu/logo_freya.png" alt="Logo Freya"></a>
+  </div>
+
+<!--Vista si es un usuario general-->
+  <div class="center" *ngIf="!admin">
+    <span (click)="productsRoute('Female')">Mujer <!--img class="locate_icon" src="../../../assets/menu/chevron-down.png" alt="Chevron Down"--></span>
+    <span (click)="productsRoute('Male')">Hombre <!--img class="locate_icon" src="../../../assets/menu/chevron-down.png" alt="Chevron Down"--></span>
+    <span (click)="productsRoute('/byCategory/Accesorios')">Accesorios</span>
+    <span (click)="nosotrosViewState=true" (mouseenter)="nosotrosViewState=true">Nosotros <img class="locate_icon" src="../../../assets/menu/chevron-down.png" alt="Chevron Down"></span>
+    <span class="locate_icon_container" (click)="routerNavigate('/stores')">Tiendas </span>
+  </div>
+
+<!--Vista si es un administrador-->
+  <div class="center"  *ngIf="admin">
+    <span (click)="productsAdminRoute()">Productos </span>
+    <span (click)="reportSellRoute()">Ventas </span>
+    <span (click)="routerNavigate('/admin/jobs')">Ofertas
+      laborales</span>
+    <span (click)="routerNavigate('/admin/stores')">Tiendas</span>
+    <span class="locate_icon_container" (click)="routerNavigate('/admin/report')">Reportes</span>
+  </div>
+
+  <div class="right">
+    <input *ngIf="stadeSearch" [(ngModel)]="seachConten" (ngModelChange)="routerNavigate('catalogue/search/'+$event+'/')" class="search" />
+
+    <img class="btn_navbar" src="../../../assets/menu/Search.png" alt="Search"
+    (click)="stadeSearch=!stadeSearch">
+
+    <img class="btn_navbar" (click)="profileRoute()" (mouseenter)="onUserIconHover()" src="../../../assets/menu/user.png" alt="User">
+    <div class="card-container">
+      <img class="btn_navbar" (click)="stateCard = !stateCard" src="../../../assets/menu/Union.png" alt="Union">
+      <div class="amountCard" *ngIf="amountItemCard>0">{{amountItemCard}}</div>
+    </div>
+  </div>
+</div>
+
+<!-- Rectángulo pequeño con botones -->
+<div class="user-options" *ngIf="showUserOptions" (mouseenter)="onUserOptionsHover()" (mouseleave)="onUserOptionsLeave()">
+  <!--button (click)="onUserIconClick()" >Inicia Sesión</-button-->
+  <button class="btn_aut" *ngIf="showNoLoginOptions" (click)="showLoginPopup()" >Inicia Sesión</button>
+  <button class="btn_aut" *ngIf="showNoLoginOptions" (click)="showRegisterPopup()">Regístrate</button>
+  <button class="btn_aut" *ngIf="!showNoLoginOptions" (click)="profileRoute()">Mi perfil</button>
+  <button class="btn_aut" *ngIf="!showNoLoginOptions&&!admin" (click)="routerNavigate('/orders')">Mis Pedidos</button>
+  <button class="btn_aut" *ngIf="!showNoLoginOptions" (click)="logout(); showNoLoginOptions=true" >Cerrar sesión</button>
+</div>
+
+<app-login-pop-up [showLoginBtn]="true" *ngIf="stadeLoginPopup"></app-login-pop-up>
+<app-login-pop-up title="REGISTRARSE" [showRegisterBtn]="true" *ngIf="stadeRegisterPopup"></app-login-pop-up>
+<div (click)="noStadeLoginPopup()" class="background-overlay" *ngIf="stadeBackGroundPopup"></div>
+
+<div class="card_show" *ngIf="stateCard" (mouseleave)="stateCard=false">
+  <app-shop-car ></app-shop-car>
+</div>
+
+<div class="banner" *ngIf="nosotrosViewState" (mouseleave)="nosotrosViewState=false">
+  <div class="banner-img" [style.background-image]="'url(../../../assets/menu/nosotros1.png)'"></div>
+  <div class="banner-img" [style.background-image]="'url(../../../assets/menu/nosotros2.png)'"></div>
+  <div class="txt-banner">
+    <p (click)="routerNavigate('/who-are-we')"> ¿ Quiénes somos ?</p>
+    <p (click)="routerNavigate('/jobs')"> Trabaja con nosotros</p>
+  </div>
+</div>

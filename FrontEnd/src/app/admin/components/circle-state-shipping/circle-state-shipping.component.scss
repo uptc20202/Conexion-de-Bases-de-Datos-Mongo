@@ -1,0 +1,14 @@
+.circle-container {
+  display: flex;
+  width: 20%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.circle {
+  position: relative;
+  width: 80px;
+  height: 75px;
+  background-size: cover;
+  background-position: center;
+}

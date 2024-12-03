@@ -1,0 +1,78 @@
+.register-form {
+  background-color: #DEE2E6;
+  border-radius: 30px;
+  padding: 20px;
+  width: 90%; /* Ajusta el ancho según sea necesario */
+  margin: 30px auto;
+}
+
+.title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+}
+
+.description {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.pass{
+  width: 49%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.input-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-group label {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #F45B69;
+  border-radius: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.checkbox {
+  margin-bottom: 10px;
+}
+
+.checkbox label {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+}
+
+.register-button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #F45B69;
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  margin: auto;
+}
+
+.checkbox{
+  margin-top: 10px;
+}
+
+.btn_register {
+  text-align: center; /* Centra el botón dentro del contenedor */
+}

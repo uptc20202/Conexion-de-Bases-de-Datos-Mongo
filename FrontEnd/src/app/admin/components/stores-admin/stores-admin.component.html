@@ -1,0 +1,54 @@
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="background-edit" *ngIf="viewStateStore" (click)="viewStateStore=false"></div>
+
+<app-edit-stores *ngIf="viewStateStore" [store]="selectStore" [mode]="modeView"
+ (storeUpdated)="loadStores();viewStateStore=false;msjCreateStore()">
+</app-edit-stores>
+
+<div class="stores-container">
+  <div class="header">
+    <div class="title">Tiendas</div>
+    <button class="new-store-button" (click)="createStore()">Nueva tienda</button>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre tienda</th>
+        <th>Dirección</th>
+        <th>Departamento</th>
+        <th>Ciudad</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let store of stores">
+        <td>{{ store.name_store }}</td>
+        <td>{{ store.address }}</td>
+        <td>{{ store.department }}</td>
+        <td>{{ store.city }}</td>
+        <td>
+          <button class="bnts-products" (click)="viewStore(store)" title="Ver">
+            <i class="fas fa-eye">
+              <div class="options-product" [style.background-image]="'url(../../../assets/admin/Eye.png)'">
+              </div>
+            </i>
+          </button>
+          <button class="bnts-products" (click)="editStore(store)" title="Editar">
+            <i class="fas fa-edit">
+              <div class="options-product" [style.background-image]="'url(../../../assets/admin/edit.png)'">
+              </div>
+            </i>
+          </button>
+          <button class="bnts-products" (click)="deleteStore(store)" title="Borrar">
+            <i class="fas fa-trash">
+              <div class="options-product"  [style.background-image]="'url(../../../assets/admin/Trash.png)'">
+              </div>
+            </i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

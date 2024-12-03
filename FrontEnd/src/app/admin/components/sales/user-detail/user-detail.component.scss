@@ -1,0 +1,194 @@
+h1, h2, h3, a, p, label,div{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+  margin: 10px auto;
+  width: 90%;
+  border-radius: 20px;
+  border: 1px solid #00000054;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.date, .order {
+  font-size: 14px;
+}
+
+.status {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.products {
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 45%;
+}
+
+.main_box{
+  display: flex;
+  gap: 30px;
+  margin: 0px auto;
+  width: 95%;
+}
+
+.product-details {
+  //flex: 1 1 300px;
+  border: 1px solid #ccccccce;
+  border-radius: 20px;
+  padding: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.product-details h3{
+  text-align: center;
+}
+
+.info_datils_product{
+  display: flex;
+  gap: 10px;
+}
+
+.detail_summary{
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-info {
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  margin: 10px 0;
+}
+
+.product-details img {
+  width: 30%;
+  //height: auto;
+  border-radius: 5px;
+}
+
+.address-details {
+  border-radius: 30px;
+  border: 1px solid #ccccccce;
+  padding: 10px;
+  width: 45%;
+}
+
+.address-details h2{
+  text-align: center;
+}
+
+.summary {
+  margin-top: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.summary h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.summary p {
+  margin: 5px 0;
+}
+
+.actions_status{
+  margin: 10px;
+  display: flex;
+  gap: 40px;
+  text-align: center;
+}
+
+.actions_status div{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.actions_status div p{
+  padding: 0px;
+  margin: 5px;
+}
+
+.status-delivered {
+  background-color: green;
+  color: white;
+  padding: 1px;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.status-cancelled {
+  background-color: gray;
+  color: white;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.status-preparing {
+  background-color: orange;
+  color: white;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.status-prepared {
+  background-color: blue;
+  color: white;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.status-confirmed {
+  background-color: yellow;
+  color: black;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.status-pending {
+  height: 30px;
+  background-color: red;
+  color: white;
+  padding: 1px;
+  border-radius: 30px;
+}
+
+.action-button {
+  font-size: 14px;
+  color: black;
+  margin-left: 10px;
+  border-radius: 20px; /* Bordes redondeados */
+  cursor: pointer;
+  height: 30px;
+}
+
+.buy{
+  border-color: #00B733;
+  width: 300px;
+}
+
+button:hover {
+  background-color: lightgray; /* Color de fondo al pasar el cursor */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+button:active {
+  transform: scale(0.95); /* Reducir tamaño al hacer clic */
+  transition: transform 0.1s ease; /* Transición rápida */
+}
+

@@ -1,0 +1,77 @@
+<div class="product-overview-container">
+
+  <!-- Mostrar prendas -->
+  <div class="product-prices">
+    <div *ngIf="quantity <= 6">
+      <p class="text-quantity">1 - 6 prendas:</p>
+      <p class="prices-text">{{ price1To6 | currency }}</p>
+    </div>
+    <div *ngIf="quantity > 6 && quantity <= 19">
+      <a class="text-queatity">7 - 19 prendas: </a>
+      <a class="prices-text">{{ price7To19 | currency }}</a>
+    </div>
+    <div *ngIf="quantity >= 20">
+      <p class="text-queatity">20 prendas o más: </p>
+      <p class="prices-text">{{ price20OrMore | currency }}</p>
+    </div>
+  </div>
+
+  <!-- Selección de color -->
+  <div class="color">
+    <p>Color: {{ colors}}</p>
+    <div class="color-circle" [style.background-color]="colors"></div>
+  </div>
+
+  <div class="stock">
+    <h3>Stock:</h3>
+    <div *ngFor="let size of sizes">
+      <p>{{size.size }} : {{size.quantity }}</p>
+    </div>
+  </div>
+
+  <!-- Selección de tallas -->
+  <div class="product-sizes">
+    <div>
+      <label for="size">Tallas:</label>
+      <label for="size">Cantidad:</label>
+    </div>
+
+    <div *ngFor="let size of sizes">
+
+        <div>
+          <span>{{ size.size }}</span>
+        </div>
+
+        <div (click)="validateStock()">
+          <button class="btn-quantity" (click)="decreaseSize(size.size);">-</button>
+          <input class="intput-quantity" type="number" [(ngModel)]="sizeQuantities[size.size]" [value]="sizeQuantities[size.size]"  (ngModelChange)="validateStock(); calculatePrices()">
+          <!--span>{{ sizeQuantities[size] }}</!--span-->
+          <button class="btn-quantity" (click)="increaseSize(size.size);">+</button>
+        </div>
+
+    </div>
+  </div>
+
+  <!-- Resumen de la compra -->
+  <div class="summary">
+    <div class="summary-item">
+      <label>Unidad:</label>
+      <span>{{ unitPrice | currency }}</span>
+    </div>
+    <div class="summary-item">
+      <label>Cantidad:</label>
+      <span>{{ quantity }}</span>
+    </div>
+    <div class="summary-item">
+      <label>Subtotal:</label>
+      <span>{{ subtotal | currency }}</span>
+    </div>
+  </div>
+
+  <!-- Botones de acción -->
+  <div class="actions">
+    <button class="btn-shop" (click)="addToCart()">AGREGAR AL CARRITO </button>
+    <p (click)="addMoreItems()">Seguir comprando</p>
+  </div>
+
+</div>

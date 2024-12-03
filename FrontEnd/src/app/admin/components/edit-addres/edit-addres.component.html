@@ -1,0 +1,54 @@
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="form-container">
+  <button class="back-button" *ngIf="mode=='profile'" (click)="back.emit(true);">Volver</button>
+
+  <div class="form-section">
+    <div class="input-container">
+      <label>Departamento</label>
+      <select class="rounded-input" [(ngModel)]="departamentoSelect" (change)="onDepartamentoSelected(departamentoSelect)">
+        <option *ngFor="let dept of departamentos" [value]="dept">{{ dept }}</option>
+      </select>
+    </div>
+    <div class="input-container">
+      <label>Dirección</label>
+      <input class="rounded-input" type="text" placeholder="Ejemplo de dirección" [(ngModel)]="nuevaDireccion.address">
+    </div>
+  </div>
+
+  <div class="form-section">
+    <div class="input-container">
+      <label>Municipio</label>
+      <select class="rounded-input" [(ngModel)]="nuevaDireccion.municipality">
+        <option *ngFor="let municipio of municipios" [value]="municipio">{{ municipio }}</option>
+      </select>
+    </div>
+    <div class="input-container">
+      <label>Información adicional</label>
+      <input class="rounded-input" type="text" placeholder="Ejemplo de info adicional" [(ngModel)]="nuevaDireccion.aditional_info">
+    </div>
+  </div>
+
+  <div class="form-section">
+    <div class="input-container">
+      <label>Barrio/Localidad</label>
+      <input class="rounded-input" type="text" placeholder="Ejemplo de barrio/localidad" [(ngModel)]="nuevaDireccion.neighborhood">
+    </div>
+    <div class="input-container">
+      <label>Destinatario</label>
+      <input class="rounded-input" type="text" placeholder="Ejemplo de destinatario" [(ngModel)]="nuevaDireccion.name_addressee">
+    </div>
+  </div>
+
+  <div class="form-section">
+    <div class="input-container">
+      <label>Celular</label>
+      <input class="rounded-input" type="number" placeholder="Ejemplo de celular" [(ngModel)]="nuevaDireccion.number_phone">
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button class="save-button" (click)="onSaveChanges()">GUARDAR</button>
+    <button *ngIf="addressEdit?._id" (click)="onDeleteAddress()" class="delete-button">BORRAR DIRECCIÓN</button>
+  </div>
+</div>

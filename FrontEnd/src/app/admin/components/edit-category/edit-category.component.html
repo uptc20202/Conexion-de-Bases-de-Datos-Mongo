@@ -1,0 +1,81 @@
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="category-editor">
+
+  <div class="options">
+    <button class="back" (click)="this.back.emit(false);">Volver</button>
+    <button class="save" (click)="updateCategory()">Guardar</button>
+  </div>
+  <div class="header">
+    <h1>Categorías</h1>
+  </div>
+  <div class="content">
+    <div class="left-section">
+
+      <div>
+        <label for="name_category">Nombre Categoría:</label>
+        <input id="name_category" placeholder="Nombre de categoria" [(ngModel)]="category.name_category" type="text">
+      </div>
+
+      <div>
+        <label for="description_category">Descripción:</label>
+      <textarea id="description_category" placeholder="Descripción..." [(ngModel)]="category.description_category"></textarea>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <h3>Guía de Tallas</h3>
+      <div class="size-guide">
+        <div class="guide-div" class="size-guide-item">
+          <p>Femenino:</p>
+
+          <div class="guide-div" (click)="viewImage(category.url_size_guide_fem); fileInput.click()" [style.background-image]="'url(' + category.url_size_guide_fem + ')'" alt="Guía de Tallas Femenino" >
+            <div class="detele_ico" (click)="category.url_size_guide_fem=urlImageUpload" *ngIf="category.url_size_guide_fem!=urlImageUpload"
+              [style.background-image]="'url(../../../assets/general_icons/boton-x.png)'"></div>
+               <p class="txt_upload" *ngIf="category.url_image==urlImageUpload">Cargar imagen</p>
+          </div>
+          <input type="file" #fileInput style="display: none;" (change)="onFileChange($event, 'url_size_guide_fem')">
+
+        </div>
+        <div class="guide-div" class="size-guide-item">
+          <p>Masculino:</p>
+
+          <div class="guide-div" (click)="viewImage(category.url_size_guide_male); fileInput2.click()" [style.background-image]="'url(' + category.url_size_guide_male + ')'" alt="Guía de Tallas Masculino" >
+            <div class="detele_ico" (click)="category.url_size_guide_male=urlImageUpload" *ngIf="category.url_size_guide_male!=urlImageUpload"
+              [style.background-image]="'url(../../../assets/general_icons/boton-x.png)'"></div>
+               <p class="txt_upload" *ngIf="category.url_image==urlImageUpload">Cargar imagen</p>
+          </div>
+          <input type="file" #fileInput2 style="display: none;" (change)="onFileChange($event, 'url_size_guide_male')">
+
+        </div>
+      </div>
+      <div class="icons">
+        <div class="guide-div">
+          <p>Icono:</p>
+
+          <div class="guide-div" (click)="viewImage(category.url_icon); fileInput3.click()" [style.background-image]="'url(' + category.url_icon + ')'" alt="Icono Categoría">
+            <div class="detele_ico" (click)="category.url_icon=urlImageUpload" *ngIf="category.url_icon!=urlImageUpload"
+              [style.background-image]="'url(../../../assets/general_icons/boton-x.png)'"></div>
+               <p class="txt_upload" *ngIf="category.url_image==urlImageUpload">Cargar imagen</p>
+          </div>
+          <input type="file" #fileInput3 style="display: none;" (change)="onFileChange($event, 'url_icon')">
+
+        </div>
+
+        <div class="guide-div">
+          <p>Imagen:</p>
+
+          <div class="guide-div" (click)="viewImage(category.url_image); fileInput4.click()" [style.background-image]="'url(' + category.url_image + ')'" alt="Icono Categoría">
+            <div class="detele_ico" (click)="category.url_image=urlImageUpload" *ngIf="category.url_image!=urlImageUpload"
+              [style.background-image]="'url(../../../assets/general_icons/boton-x.png)'"></div>
+               <p class="txt_upload" *ngIf="category.url_image==urlImageUpload">Cargar imagen</p>
+          </div>
+          <input type="file" #fileInput4 style="display: none;" (change)="onFileChange($event, 'url_image')">
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

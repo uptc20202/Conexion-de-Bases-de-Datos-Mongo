@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+</head>
+<body>
+
+  <!--<div class="tiendas-freya-container">
+    <div class="left-panel">
+      <h1 class="title">Tiendas Freya</h1>
+
+
+      <div class="buttons" style="visibility: hidden;">
+        <button class="button" >Tunja Plaza Real</button>
+        <button class="button" >Tunja Centro</button>
+        <button class="button" >Tunja</button>
+        <button class="button" >Duitama</button>
+        <button class="button" >Sogamoso</button>
+        <button class="button" >Paipa</button>
+        <button class="button" >Barbosa</button>
+      </div>
+    </div>
+    <div class="right-panel" hidden="true">
+      <div class="google-maps" id="googleMap">
+        <iframe
+              width="100%"
+              height="100%"
+              frameborder="0" style="border:0"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.3630671874533!2d-73.6910787!3d5.5346185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7d70720002fb%3A0x4d3f80940b20fb7b!2sFreya!5e0!3m2!1sen!2sus!4v1622644461597"
+              allowfullscreen>
+          </iframe>
+      </div>
+    </div>
+  </div>-->
+
+  <div class="container">
+    <h1 class="title">Tiendas Freya</h1>
+    <div class="store-cards">
+      <div class="store-card" *ngFor="let store of stores">
+        <div class="carousel">
+          <div class="carousel-image" *ngFor="let image of store.images" [style.backgroundImage]="'url(' + image + ')'"></div>
+        </div>
+        <div class="card-content">
+          <h3>{{ store.name_store }}</h3>
+          <p class="location">{{ store.address }}, {{ store.city }}, {{ store.department }}</p>
+          <button (click)="viewStore(store._id)" class="more-info">Ver más</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

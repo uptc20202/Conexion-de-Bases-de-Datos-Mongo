@@ -1,0 +1,23 @@
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="popup-container">
+  <div class="container">
+    <h2 class="title">{{ title }}</h2>
+    <hr class="divider">
+
+    <div class="input-group">
+      <h3 class="input-title">Correo</h3>
+      <input type="email" class="input-field" placeholder="Ingrese su correo" [(ngModel)]="email" (ngModelChange)="setEmail($event)">
+    </div>
+
+    <div class="input-group">
+      <h3 class="input-title">Contraseña</h3>
+      <input type="password" class="input-field" placeholder="Ingrese su contraseña" [(ngModel)]="password" (ngModelChange)="setPassword($event)">
+      <a *ngIf="showLoginBtn"  class="forgot-password" (click)="navigate('forgot-password')">Olvidé mi contraseña</a>
+    </div>
+
+    <button *ngIf="showLoginBtn" (click)="loginBtnClick()" class="login-button">INGRESAR</button>
+    <button *ngIf="showRegisterBtn" (click)="registerBtnClick()" class="login-button">REGISTRARSE</button>
+  </div>
+
+</div>

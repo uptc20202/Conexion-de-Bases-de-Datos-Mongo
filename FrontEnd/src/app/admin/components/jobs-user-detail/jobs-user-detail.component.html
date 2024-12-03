@@ -1,0 +1,21 @@
+<div class="job-detail-container">
+  <h1>Únete al equipo Freya</h1>
+  <div class="button-space">
+    <button class="apply-button" (click)="applyToJob()">Aplicar a la oferta</button>
+  </div>
+
+  <div *ngIf="job">
+    <p><strong class="titles-fields">Fecha de publicación:</strong><br> {{ job?.createdAt | date: 'dd MMM. yyyy' }}</p>
+    <p><strong class="titles-fields">CARGO:</strong><br> {{ job?.position }}</p>
+    <p><strong class="titles-fields">SALARIO BÁSICO:</strong><br> {{ job?.salary | currency }} + beneficio de alimentación + todos los recargos de ley.</p>
+    <p><strong class="titles-fields">UBICACIÓN:</strong><br> {{ job?.ubication }}</p>
+    <p><strong class="titles-fields">REQUISITOS:</strong><br> {{ job?.requeriments }}</p>
+    <p><strong class="titles-fields">CONOCIMIENTOS MÍNIMOS:</strong><br> {{ job?.min_knowledge }}</p>
+    <p><strong class="titles-fields">RESPONSABILIDADES:</strong><br></p>
+    <ul>
+      <li *ngFor="let responsibility of job?.responsibilities.split(';')">
+        {{ responsibility }}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<!-- sales-orders.component.html -->
+<div *ngIf="sales.length > 0 && !editState">
+  <div *ngFor="let sale of sales" class="sale-card">
+    <div class="sale-section">
+      <img [src]="sale.articles[0]?.details?.images[0]" alt="Product Image" class="product-image">
+    </div>
+    <div class="sale-section">
+      <p><b>N° DE REFERENCIA:</b> {{ getShortId(sale._id) }}</p>
+
+      <a *ngFor="let article of sale?.articles">{{ getShortId(article?.details?.name_article) }} {{ article?.size }}... </a>
+
+    </div>
+    <div class="sale-section">
+      <p><b>CANTIDAD:</b> {{ getTotalQuantity(sale.articles) }}</p>
+      <p>Total: {{ sale.totalSale }}</p>
+    </div>
+    <div class="sale-section">
+      <p><b>FECHA DEL PEDIDO:</b></p>
+      <p>{{ sale.createdAt | date:'dd MMMM yyyy' }}</p>
+    </div>
+    <div class="sale-section stade">
+      <div [ngClass]="getOrderStatusClass(sale.statusSale)">
+       <p> {{ sale.statusSale | uppercase }} </p>
+      </div>
+      <button (click)="editState=true; viewSale(sale._id)">Ver detalles</button>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="editState">
+  <app-user-detail [id_sale]="idSaleView"></app-user-detail>
+</div>
+
+<!--noSales-->
+<div  *ngIf="sales.length <= 0">
+  <p >No se encontraron ventas para este usuario.</p>
+</div>
+
+

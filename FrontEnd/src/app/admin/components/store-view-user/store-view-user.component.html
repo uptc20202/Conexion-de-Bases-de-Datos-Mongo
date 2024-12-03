@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>{{ store?.name_store }}</h1>
+  <div class="store-details">
+    <div class="carousel">
+      <div class="carousel-image" *ngFor="let image of store?.images" [style.backgroundImage]="'url(' + image + ')'"></div>
+    </div>
+    <div class="details-content">
+      <p><strong>Dirección:</strong> {{ store?.address }}</p>
+      <p><strong>Ciudad:</strong> {{ store?.city }}</p>
+      <p><strong>Departamento:</strong> {{ store?.department }}</p>
+    </div>
+  </div>
+</div>

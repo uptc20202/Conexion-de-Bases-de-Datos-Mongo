@@ -1,0 +1,142 @@
+h1,h2,h3,label,p,a,span{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.product-overview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+}
+
+.product-prices {
+}
+
+.product-color, .product-sizes, .summary, .actions {
+  margin-bottom: 10px;
+}
+
+.product-sizes {
+  display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
+    width: 200px;
+}
+
+
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+}
+
+.actions button {
+  margin: 5px;
+}
+
+
+.text-quantity{
+  color: #666666ba;
+}
+
+.prices-text{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+
+
+.product-sizes div{
+  display: flex;
+  justify-content: space-around;
+}
+
+.summary{
+  width: 100%;
+  margin-top: 30px;
+}
+
+.actions{
+  display: flex;
+  margin: 0px auto;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.actions p{
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 5px;
+  color: #F45B69
+}
+
+.actions p{
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 5px;
+  color: #F45B69
+}
+
+.btn-shop{
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #F45B69;
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+
+.actions p:hover,button:hover {
+  background-color: lightgray; /* Color de fondo al pasar el cursor */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.actions p:hover,button:active {
+  transform: scale(0.95); /* Reducir tamaño al hacer clic */
+  transition: transform 0.1s ease; /* Transición rápida */
+}
+
+.intput-quantity{
+  width: 40px;
+  padding: 3px;
+    margin: 1px;
+}
+
+.btn-quantity{
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  color: black;
+  border: none;
+  width: 30px;
+  font-size: 20px;
+  height: 30px;
+}
+
+
+.color {
+  display: flex;
+  align-items: center;
+}
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.stock{
+  display: flex;
+    align-items: center;
+    gap: 20px;
+}

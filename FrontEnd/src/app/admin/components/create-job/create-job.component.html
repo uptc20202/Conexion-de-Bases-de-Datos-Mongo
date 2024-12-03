@@ -1,0 +1,36 @@
+<div class="category-editor">
+  <div class="header">
+    <h1>Crear Oferta Laboral</h1>
+    <div class="options">
+      <button class="back" (click)="goBack()">Volver</button>
+      <button class="save" (click)="createJob(); test()">Guardar</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="left-section">
+      <label>Título:</label>
+      <input type="text" [(ngModel)]="job.title" placeholder="Título de la oferta">
+
+      <label>Posición:</label>
+      <input type="text" [(ngModel)]="job.position" placeholder="Posición">
+
+      <label>Salario:</label>
+      <input type="number" [(ngModel)]="job.salary" placeholder="Salario">
+
+      <label>Requerimientos:</label>
+      <input type="text" [(ngModel)]="job.requeriments" placeholder="Requerimientos">
+    </div>
+
+    <div class="right-section">
+      <label>Ubicación:</label>
+      <input type="text" [(ngModel)]="job.ubication" placeholder="Ubicación">
+      <br>
+      <label>Conocimientos mínimos:</label>
+      <textarea type="text" [(ngModel)]="job.min_knowledge" placeholder="Conocimientos mínimos"></textarea>
+
+      <label>Responsabilidades:</label>
+      <textarea [(ngModel)]="job.responsibilities" placeholder="Responsabilidades"></textarea>
+    </div>
+  </div>
+</div>

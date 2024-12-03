@@ -1,0 +1,32 @@
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="change-password-container">
+  <div class="field-group">
+    <h3 class="field-title">Contraseña Actual</h3>
+    <input placeholder="Contraseña Actual" [(ngModel)]="currentPassword" [type]="showCurrentPassword ? 'text' : 'password'" class="input-field" />
+    <button type="button" (click)="toggleShowCurrentPassword()" class="toggle-password-btn">
+      {{ showCurrentPassword ? 'Ocultar' : 'Mostrar' }}
+    </button>
+  </div>
+
+  <div class="field-group">
+    <h3 class="field-title">Nueva Contraseña</h3>
+    <input placeholder="Nueva Contraseña" [(ngModel)]="newPassword" [type]="showNewPassword ? 'text' : 'password'" class="input-field" />
+    <button type="button" (click)="toggleShowNewPassword()" class="toggle-password-btn">
+      {{ showNewPassword ? 'Ocultar' : 'Mostrar' }}
+    </button>
+  </div>
+
+  <div class="field-group">
+    <h3 class="field-title">Confirmar Nueva Contraseña</h3>
+    <input placeholder="Confirmar Nueva Contraseña" [(ngModel)]="confirmNewPassword" [type]="showConfirmNewPassword ? 'text' : 'password'" class="input-field" />
+    <button type="button" (click)="toggleShowConfirmNewPassword()" class="toggle-password-btn">
+      {{ showConfirmNewPassword ? 'Ocultar' : 'Mostrar' }}
+    </button>
+  </div>
+
+  <!-- Botón Guardar -->
+  <div class="save-button-container">
+    <button (click)="changePassword()" class="save-button">Guardar</button>
+  </div>
+</div>

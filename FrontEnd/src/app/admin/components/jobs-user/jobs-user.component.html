@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Únete al equipo Freya</h1>
+  <div class="job-cards">
+    <div class="job-card" *ngFor="let job of jobs">
+
+      <div class="card-image" [style.background-image]="'url(../../../assets/jobs/caratula.png)'"></div>
+
+      <div class="card-content">
+        <h3>{{ job?.title }}</h3>
+        <p class="location">{{ job?.ubicacion }}</p>
+        <p class="description">{{ job?.requeriments }}</p>
+        <button (click)="routerNavigate(job._id)" class="more-info">Ver más</button>
+      </div>
+
+    </div>
+  </div>
+</div>

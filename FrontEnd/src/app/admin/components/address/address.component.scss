@@ -1,0 +1,73 @@
+.address-book-container {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 20px;
+  width: 100%;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .header-button {
+      border: 1px solid black;
+      border-radius: 20px;
+      background-color: white;
+      font-family: 'Ubuntu', sans-serif;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+
+  .address-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+
+    .address-card {
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 10px;
+
+      .address-details {
+
+        p {
+          margin-bottom: 8px;
+          font-family: 'Ubuntu', sans-serif;
+          font-weight: bolder;
+        }
+
+        .edit-button {
+          border: 1px solid black;
+          border-radius: 20px;
+          background-color: white;
+          font-family: 'Ubuntu', sans-serif;
+          padding: 8px 16px;
+          font-size: 14px;
+          height: 40px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
+.address-details{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-button:hover,
+.edit-button:hover {
+  background-color: lightgray; /* Color de fondo al pasar el cursor */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.header-button:active,
+.edit-button:active {
+  transform: scale(0.95); /* Reducir tamaño al hacer clic */
+  transition: transform 0.1s ease; /* Transición rápida */
+}
+

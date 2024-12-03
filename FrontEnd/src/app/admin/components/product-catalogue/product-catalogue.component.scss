@@ -1,0 +1,41 @@
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 303px;
+  //height: 400px;
+}
+
+.content {
+  display: flex; /* Usar display flex para colocar los elementos en línea */
+  justify-content: space-between; /* Espacio entre los elementos para separarlos */
+  padding: 10px;
+}
+
+.text {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #F45B69;
+}
+
+.product-image{
+  //width: 100%;
+  //height: 60%;
+
+  //background-size: cover; /* Escalar la imagen para llenar el contenedor */
+  //background-position: center; /* Centrar la imagen en el contenedor */
+  //cursor: pointer; /* Cambiar el cursor al pasar sobre la imagen */
+  position: relative;
+  width: 100%;
+  height: 300px; /* Ajustar la altura según tus necesidades */
+  background-size: cover;
+  background-position: center top; /* Centrar horizontalmente y mostrar la parte superior */
+
+}

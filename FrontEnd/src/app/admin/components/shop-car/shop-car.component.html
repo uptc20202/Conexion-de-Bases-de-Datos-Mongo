@@ -1,0 +1,41 @@
+<!-- shopping-cart.component.html -->
+
+<div class="cart-container">
+  <h1 class="cart-title">Carrito de Compras</h1>
+  <hr>
+
+  <!-- Productos en el carrito -->
+  <div class="before-list" *ngIf="cartItems.length > 0; else emptyCart">
+    <div class="products-list">
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <div class="detele_ico" (click)="deleteItem(item)"
+              [style.background-image]="'url(../../../assets/general_icons/boton-x.png)'"></div>
+        <img [src]="item.product.images[0]" alt="{{ item.product.name_article }}" class="product-image">
+        <div class="product-details">
+          <p class="product-title">{{ item.product.name_article }}</p>
+          <p class="product-title">Talla: {{ item.size }}</p>
+          <div class="quantity-controls">
+            <button (click)="decreaseQuantity(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="increaseQuantity(item)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="cart-summary">
+      <p>Subtotal: {{ calculateSubtotal() | currency:'USD':'symbol' }}</p>
+      <p>Costo de Envío: {{ shippingCost | currency:'USD':'symbol' }}</p>
+      <p>Total: {{ calculateTotal() | currency:'USD':'symbol' }}</p>
+      <button class="checkout-button" (click)="cartRoute()">CONTINUAR COMPRA</button>
+    </div>
+  </div>
+
+  <!-- Carrito vacío -->
+  <ng-template #emptyCart>
+    <p class="empty-cart-message">Tu carrito está vacío</p>
+    <button class="continue-shopping-button">Seguir Comprando</button>
+  </ng-template>
+
+</div>

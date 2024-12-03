@@ -1,0 +1,33 @@
+
+<div class="account-layout">
+  <!-- Sección izquierda (30% de ancho) -->
+  <div class="left-section">
+    <h1 class="title">Mi cuenta</h1>
+    <ul class="menu">
+      <li (click)="show('profile')">Perfil</li>
+      <li (click)="show('address')">Direcciones</li>
+      <li (click)="show('orders')">Pedidos</li>
+      <li (click)="show('changePass')">Contraseña</li>
+    </ul>
+  </div>
+
+  <!-- Sección derecha (70% de ancho) -->
+  <div class="right-section">
+    <!-- Aquí puedes incluir otro componente Angular usando su selector -->
+    <app-profile *ngIf="profile"></app-profile>
+
+    <app-address
+      *ngIf="address"
+      (editBtn)="show('editAddress')"
+      (addressEdit)="addressEdit=$event;
+      show('editAddress')" >
+    </app-address>
+
+    <app-sales-orders *ngIf="orders">
+
+    </app-sales-orders>
+
+    <app-update-pass *ngIf="changePass"></app-update-pass>
+
+  </div>
+</div>

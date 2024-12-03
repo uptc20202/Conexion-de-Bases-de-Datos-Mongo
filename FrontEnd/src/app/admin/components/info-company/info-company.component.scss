@@ -1,0 +1,45 @@
+.about-us-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #fafafa;
+  font-family: 'Ubuntu', sans-serif;
+  color: #6C757D;
+}
+
+.about-us-image {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 14px;
+}
+
+.about-us-content {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 27px;
+}
+
+.about-us-title {
+  font-size: 36px;
+  color: #F45B69;
+  margin-bottom: 20px;
+}
+
+.about-us-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-us-subtitle {
+  font-size: 24px;
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,59 @@
+h1, p, label, div, a, span, h3 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.job-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.job-detail-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.apply-button {
+  background-color: #F45B69;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    align-self: flex-end;
+}
+
+.button-space{
+  display: flex;
+  width: 100%;
+}
+
+
+.titles-fields{
+  color: #F45B69;
+}
+
+.job-detail-container p {
+  margin: 10px 0;
+}
+
+.job-detail-container ul {
+  padding-left: 20px;
+}
+
+.job-detail-container ul li {
+  list-style-type: disc;
+}
+
+button:hover {
+  background-color: lightgray; /* Color de fondo al pasar el cursor */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+button:active {
+  transform: scale(0.95); /* Reducir tamaño al hacer clic */
+  transition: transform 0.1s ease; /* Transición rápida */
+}

@@ -1,0 +1,57 @@
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="product-list" *ngIf="!stadeEdit">
+  <div class="header">
+    <h1 class="title">Categorías</h1>
+    <button class="new-product-button" (click)="toEdit(false);editCategory=''"> Nueva categoria</button>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Categoría</th>
+        <th>Descripción</th>
+        <th>Icono</th>
+        <th>Imagen</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.name_category }}</td>
+        <td>{{ category.description_category }}</td>
+        <td>
+          <img [src]="category.url_icon" alt="Icono" width="50">
+        </td>
+        <td>
+          <img [src]="category.url_image" alt="Imagen" width="100">
+        </td>
+        <td>
+          <!--button-- class="bnts-products"  title="Ver">
+            <i class="fas fa-eye">
+              <div class="options-product" [style.background-image]="'url(../../../assets/admin/Eye.png)'">
+              </div>
+            </i>
+          </!--button-->
+          <button class="bnts-products"  title="Editar" (click)="toEditCategory(category)">
+            <i class="fas fa-edit">
+              <div class="options-product" [style.background-image]="'url(../../../assets/admin/edit.png)'">
+              </div>
+            </i>
+          </button>
+          <button class="bnts-products" title="Borrar" (click)="deteleCategory(category)">
+            <i class="fas fa-trash">
+              <div class="options-product"  [style.background-image]="'url(../../../assets/admin/Trash.png)'">
+              </div>
+            </i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
+
+
+<app-edit-category *ngIf="stadeEdit" [categoryId]="editCategory"  (back)="toEdit($event);loadCategories()" (newCategory)="categories.push($event)"></app-edit-category>

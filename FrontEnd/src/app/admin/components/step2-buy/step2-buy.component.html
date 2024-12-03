@@ -1,0 +1,66 @@
+<div class="cart-container">
+
+  <div class="top-section">
+
+    <app-circle-state-shipping hidden="true"></app-circle-state-shipping>
+  </div>
+
+  <div class="summary-section">
+    <h2>RESUMEN DE COMPRA</h2>
+
+    <div class="details">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th></th> <!-- Columna para el botón de eliminar -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems" class="cart-item">
+
+            <td class="product-column">
+              <img class="product-image" [src]="item.product?.images[0]" alt="{{ item.product?.name_article }}" class="product-image">
+              <p>{{ item.product?.name_article + " "+ item?.size}}</p>
+            </td>
+
+            <td class="price">{{ item.product?.retail_price | currency:'COP':'symbol':'1.0-0' }}</td>
+            <td class="quantity">
+              <button (click)="decreaseQuantity(item)">-</button>
+              <span>{{ item.quantity }}</span>
+              <button (click)="increaseQuantity(item)">+</button>
+            </td>
+            <td class="total">{{ item.product?.retail_price * item?.quantity | currency:'COP':'symbol':'1.0-0' }}</td>
+            <td>
+              <button class="delete-button" (click)="removeItem(item)">
+                <img src="../../../assets/shop/trash.png" alt="Trash Icon">
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="totals">
+        <div>
+          <p>Subtotal:</p>
+          <p>{{ calculateSubtotal() | currency:'COP':'symbol':'1.0-0' }}</p>
+        </div>
+        <div>
+          <p>Costo de Envío:</p>
+          <p>{{ shippingCost | currency:'COP':'symbol':'1.0-0' }}</p>
+        </div>
+        <div>
+          <p>Total:</p>
+          <p>{{ calculateTotal() | currency:'COP':'symbol':'1.0-0' }}</p>
+        </div>
+
+        <button class="continue-button" (click)="toStep3()">CONTINUAR COMPRA</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,162 @@
+.product-list {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 30px;
+  color: #F45B69;
+}
+
+.new-product-button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 2px solid #00b733;
+  font-size: 18px;
+  color: #00b733;
+  cursor: pointer;
+}
+
+.new-product-button:hover {
+  background-color: #00b733;
+  color: #ffffff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #dddddd;
+  padding: 10px;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background-color: #e9e9e9;
+}
+
+.actions button {
+  margin-right: 5px;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #dddddd;
+}
+
+
+.product-image {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.product-image:hover {
+  opacity: 0.8;
+}
+
+.input-filter {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background-color: #e9e9e9;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.options-product{
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-position: center top;
+}
+
+
+.bnts-products{
+  background: none;
+  border: none;
+}
+
+.bnts-products:hover {
+  background-color: lightgray; /* Color de fondo al pasar el cursor */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  cursor: pointer;
+}
+
+.bnts-products:active {
+  transform: scale(0.95); /* Reducir tamaño al hacer clic */
+  transition: transform 0.1s ease; /* Transición rápida */
+}
+
+.options-product{
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-position: center top;
+}
+
+.bnts-products{
+  background: none;
+  border: none;
+}

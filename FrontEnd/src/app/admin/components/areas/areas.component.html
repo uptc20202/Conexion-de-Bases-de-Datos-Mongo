@@ -1,0 +1,57 @@
+<div class="title">
+  <h1>¡ Lleva prendas desde $20.000 !</h1>
+</div>
+
+<div class="rectangles">
+  <div class="rectangle">
+    <app-targeta-areas (click)="navigateRoute('Female')"
+      [backgroundImage]="'../../../assets/grid_topics/example_grid_1.png'"
+      [labelText]="'MUJER'"
+      [buttonText]="'VER MÁS'"
+      [height]="'90vh'"
+      [width]="'100%'"
+    ></app-targeta-areas>
+  </div>
+
+  <div class="rectangle">
+    <app-targeta-areas (click)="navigateRoute('Male')"
+      [backgroundImage]="'../../../assets/grid_topics/example_grid_2.png'"
+      [labelText]="'HOMBRE'"
+      [buttonText]="'VER MÁS'"
+      [height]="'90vh'"
+      [width]="'100%'"
+    ></app-targeta-areas>
+  </div>
+</div>
+
+<div class="sub-rectangles">
+  <div class="sub-rectangle">
+    <app-targeta-areas (click)="navigateRoute('byCategory/Busos%20-%20Hombre')"
+      [backgroundImage]="'../../../assets/grid_topics/example_grid_3.png'"
+      [labelText]="'BUSOS'"
+      [buttonText]="'VER MÁS'"
+      [height]="'70vh'"
+      [width]="'100%'"
+    ></app-targeta-areas>
+  </div>
+
+  <div class="sub-rectangle">
+    <app-targeta-areas (click)="navigateRoute('byCategory/Camisas')"
+      [backgroundImage]="'../../../assets/grid_topics/example_grid_4.png'"
+      [labelText]="'CAMISAS'"
+      [buttonText]="'VER MÁS'"
+      [height]="'70vh'"
+      [width]="'100%'"
+    ></app-targeta-areas>
+  </div>
+
+  <div class="sub-rectangle">
+    <app-targeta-areas (click)="navigateRoute('byCategory/Busos%20-%20Hombre')"
+      [backgroundImage]="'../../../assets/grid_topics/example_grid_3.png'"
+      [labelText]="'BUSOS'"
+      [buttonText]="'VER MÁS'"
+      [height]="'70vh'"
+      [width]="'100%'"
+    ></app-targeta-areas>
+  </div>
+</div>

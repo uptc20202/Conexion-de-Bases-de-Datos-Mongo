@@ -1,0 +1,60 @@
+/* change-password.component.css */
+.change-password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.field-group {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.field-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 17px;
+  color: #6C757D;
+  font-weight: 100;
+  margin: 17px 0 2px 0;
+}
+
+.input-field {
+  width: calc(100% - 60px); /* Ajuste para el botón */
+  border: none;
+  border-bottom: 1px solid rgba(99, 99, 99, 0.562);
+  outline: none;
+  padding: 10px 0;
+  color: #6C757D;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.toggle-password-btn {
+  width: 50px;
+  margin-left: 10px;
+  background: none;
+  border: none;
+  color: #F45B69;
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+}
+
+.save-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.save-button {
+  padding: 10px 40px;
+  background-color: #F45B69;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+}

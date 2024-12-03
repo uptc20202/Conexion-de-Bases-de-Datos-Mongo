@@ -1,0 +1,36 @@
+
+<app-pop-message [typeOfAlert]="typeOfAlert"
+  [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd">
+</app-pop-message>
+
+
+<div class="container-wrapper">
+
+
+  <div class="category-carousel">
+    <div class="category-item" *ngFor="let category of categories" (click)="navigateRoute('byCategory/'+category.name_category)">
+      <img [src]="category.url_icon" [alt]="category.name_category">
+      <p>{{ category.name_category }}</p>
+    </div>
+  </div>
+
+  <select class="filter-buttons" (change)="sortByPrice()" [(ngModel)]="order">
+    <option  value='emply'>Ordenar por precio:</option>
+    <option  value='asc'>Ordenar por precio: Menor a Mayor</option>
+    <option   value='desc'>Ordenar por precio: Mayor a Menor</option>
+  </select>
+
+  <div class="catalogue-container">
+    <div class="product-card" *ngFor="let article of articles">
+
+      <app-product-catalogue
+        [routerLink]="article._id"
+        [cardWidth]="'100%'"
+        [imageUrl]="article.images[0]"
+        [text]="article.name_article"
+        [price]="article.retail_price | currency:'COP':'symbol':'1.2'"
+      >
+      </app-product-catalogue>
+    </div>
+  </div>
+</div>

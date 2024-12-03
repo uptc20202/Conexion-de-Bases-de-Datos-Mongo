@@ -1,0 +1,73 @@
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="product-list" *ngIf="!stadeEdit">
+  <div class="header">
+    <h1 class="title">Productos</h1>
+    <button class="new-product-button" (click)="toEdit(false)" >Nuevo producto</button>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Producto</th>
+        <th>Nombre</th>
+        <th>Categoría</th>
+        <th>Precio de venta</th>
+        <th>Precio Medio</th>
+        <th>Precio por mayor</th>
+        <th>Cantidad total</th>
+        <th>Acciones</th>
+      </tr>
+      <tr>
+        <td><input type="text" [(ngModel)]="filter.code" (ngModelChange)="applyFilter()" placeholder="Código"></td>
+        <td></td>
+        <td><input type="text" [(ngModel)]="filter.name" (ngModelChange)="applyFilter()" placeholder="Nombre"></td>
+        <td><input type="text" [(ngModel)]="filter.category" (ngModelChange)="applyFilter()" placeholder="Categoría"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of filteredArticles">
+        <td>{{ article.code_article }}</td>
+        <td>
+          <div class="product-image" [style.background-image]="'url(' + article.images[0] + ')'" [title]="article.name_article">
+          </div>
+        </td>
+        <td>{{ article.name_article }}</td>
+        <td>{{ getCategoryName(article.category) }}</td>
+        <td>{{ article.retail_price | currency:'COP':'symbol':'1.2-2'}}</td>
+        <td>{{ article.medium_price | currency:'COP':'symbol':'1.2-2'}}</td>
+        <td>{{ article.wholesale_price | currency:'COP':'symbol':'1.2-2'}}</td>
+        <td>{{ getTotalQuantity(article.stock) }}</td>
+        <td>
+          <button class="bnts-products" (click)="routeProduct(article._id)" title="Ver">
+            <i class="fas fa-eye">
+              <div class="options-product" [style.background-image]="'url(../../../assets/admin/Eye.png)'">
+              </div>
+            </i>
+          </button>
+          <button class="bnts-products" (click)="editArticle(article)" title="Editar">
+            <i class="fas fa-edit">
+              <div class="options-product" [style.background-image]="'url(../../../assets/admin/edit.png)'">
+              </div>
+            </i>
+          </button>
+          <button class="bnts-products" (click)="deleteArticle(article)" title="Borrar">
+            <i class="fas fa-trash">
+              <div class="options-product"  [style.background-image]="'url(../../../assets/admin/Trash.png)'">
+              </div>
+            </i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-add-product *ngIf="stadeEdit" [product]="editProduct" (productCreate)="addProductList($event)"
+ (back)="toEdit($event);this.getAllArticles()"></app-add-product>

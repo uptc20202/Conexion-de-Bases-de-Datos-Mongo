@@ -1,0 +1,84 @@
+<div class="container" >
+  <div class="row">
+    <!-- Barra lateral con búsqueda y lista de ventas -->
+    <div class="col-md-3">
+      <input type="text" class="form-control mb-3" placeholder="Buscar venta...">
+      <div *ngFor="let sale of sales" (click)="onSelectSale(sale)" class="btn btn-primary mb-2">
+        <p> Venta REF {{ sale._id.substring(0, 6) }} </p>
+      </div>
+    </div>
+
+    <!-- Detalles de la venta seleccionada -->
+    <div class="col-md-9" *ngIf="selectedSale">
+      <h1>Venta REF {{ selectedSale._id.substring(0, 6) }}</h1>
+
+      <!-- Detalles generales de la venta -->
+      <table class="table table-general">
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Estado</td>
+            <td [ngStyle]="{ 'background-color': selectedSale.statusSale === 'completed' ? '#D8C61E' : '' }">
+              {{ selectedSale.statusSale }}
+              <span
+                (click)="toggleDropdown()"
+                [style.background-image]="'url(../../../assets/admin/edit.png)'"
+                class="edit-icon">
+              </span>
+              <div *ngIf="dropdownVisible" class="dropdown">
+                <ul>
+                  <li *ngFor="let status of statusOptions" (click)="updateSaleStatus(status)">
+                    {{ status }}
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Cliente</td>
+            <td>{{ userEmail }}</td>
+          </tr>
+          <tr>
+            <td>Creación</td>
+            <td>{{ selectedSale.createdAt | date: 'medium'}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Detalles de los artículos de la venta -->
+      <div class="div_table_articles">
+        <table class="table table-bordered table-articles">
+          <thead>
+            <tr>
+              <th scope="col">Ref Producto</th>
+              <th scope="col">Producto</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Talla</th>
+              <th scope="col">Impuesto</th>
+              <th scope="col">Descuento</th>
+              <th scope="col">Total a pagar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let article of selectedSale.articles">
+              <td>{{ article.details?.code_article }}</td>
+              <td>{{ article.details?.name_article }}</td>
+              <td>{{ article.quantity }}</td>
+              <td>{{ article.size }}</td>
+              <td>n/a</td>
+              <td>-</td>
+              <td>{{ article.total }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</div>

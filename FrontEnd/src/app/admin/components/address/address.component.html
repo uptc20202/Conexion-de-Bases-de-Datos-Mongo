@@ -1,0 +1,28 @@
+<div class="address-book-container" *ngIf="!address_edit">
+  <div class="header">
+    <button mat-button class="header-button left" (click)="goBack()">Volver</button>
+    <button mat-button class="header-button right" (click)="address_edit=true">Agregar dirección</button>
+  </div>
+
+  <div class="address-list">
+    <div *ngFor="let address of addresses" class="address-card">
+      <div class="address-details">
+        <div class="data-address">
+          <p> {{ address.address }}</p>
+          <p>{{ address.municipality }}</p>
+          <p>{{ address.department }}</p>
+        </div>
+
+        <button mat-button class="edit-button" (click)="editAddress(address)">Editar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-edit-addres
+      (back)="loadAddress();address_edit=false"
+      [addressEdit]="addressEdit"
+      [id_user]="userId"
+      (addressDeleted)="onAddressDeleted($event)"
+      *ngIf="address_edit">
+</app-edit-addres>

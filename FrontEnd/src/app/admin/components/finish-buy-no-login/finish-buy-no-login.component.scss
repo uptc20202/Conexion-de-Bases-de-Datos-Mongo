@@ -1,0 +1,40 @@
+/* continue-whatsapp.component.css */
+.continue-whatsapp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.message-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.message-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  color: #6C757D;
+  margin-bottom: 10px;
+}
+
+.message-text {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  color: #6C757D;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.whatsapp-button {
+  padding: 10px 40px;
+  background-color: #25D366; /* Color de WhatsApp */
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+}

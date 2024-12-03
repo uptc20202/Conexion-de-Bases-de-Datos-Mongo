@@ -1,0 +1,219 @@
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="product-container">
+
+  <div class="top-space">
+    <h1 class="title">Productos</h1>
+    <div class="actions">
+      <button class="action-button back" (click)=" back.emit(false)">Volver</button>
+      <button class="action-button save" (click)="createArticle()">Guardar</button>
+    </div>
+  </div>
+
+
+
+  <div class="form-container">
+    <div class="left-section">
+      <h2>Imágenes</h2>
+      <div class="image-upload">
+        <div class="image-upload" (click)="fileInput.click()">
+          <label>Haz clic aquí para cargar una imagen</label>
+          <input type="file" #fileInput style="display: none;" (change)="onFileChange($event)">
+        </div>
+      </div>
+
+      <div class="image-preview thumbnail-images" *ngFor="let imageUrl of product.images; let i = index">
+
+        <div class="thumbnail" [style.background-image]="'url(' + imageUrl + ')'"
+        alt="Imagen" alt="Thumbnail Image">
+          <div class="detele_ico" (click)="deleteImage(i)"
+          [style.background-image]="'url(../../../assets/general_icons/boton-x.png)'"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <div class="form-row colum_1">
+
+        <div class="form-column">
+
+          <label hidden="true">Código</label>
+          <input hidden="true" type="text" [(ngModel)]="product.code_article" />
+
+          <label>Nombre</label>
+          <input type="text" [(ngModel)]="product.name_article" />
+
+          <label>Categoría:</label>
+          <select [(ngModel)]="product.category">
+            <option *ngFor="let category of categories" [ngValue]="category._id">{{ category.name_category }}</option>
+          </select>
+
+          <label>Género</label>
+          <select [(ngModel)]="product.gender">
+            <option value="MALE">Masculino</option>
+            <option value="FEMALE">Femenino</option>
+            <option value="OTRO">Otro</option>
+          </select>
+
+        </div>
+
+        <div class="form-column">
+
+          <div class="type_quantity">
+
+            <div class="quantity-input">
+              <label>Precio de Venta</label>
+              <input type="number" [(ngModel)]="product.retail_price" />
+            </div>
+
+          </div>
+
+          <div class="type_quantity">
+
+            <div class="quantity-input">
+              <label>Precio Medio</label>
+              <input type="number" [(ngModel)]="product.medium_price" />
+            </div>
+
+          </div>
+
+          <div class="type_quantity">
+
+            <div class="quantity-input">
+              <label>Precio por Mayor</label>
+              <input type="number" [(ngModel)]="product.wholesale_price" />
+            </div>
+
+          </div>
+
+          <label>Color</label>
+          <select [(ngModel)]="product.color">
+            <option value="Negro">Negro</option>
+            <option value="Blanco">Blanco</option>
+            <option value="Cafe">Cafe</option>
+            <option value="Gris">Gris</option>
+            <option value="Azul">Azul</option>
+            <option value="Roja">Rojo</option>
+            <option value="Verde oliva">Verde oliva</option>
+            <option value="Beige o crema">Beige o crema</option>
+            <option value="Azul claro">Azul claro</option>
+            <option value="Rosa">Rosa</option>
+          </select>
+        </div>
+
+        <div class="form-column sizes">
+
+          <div class="type_quantity">
+            <div class="quantity-input">
+              <label>Talla</label>
+              <div class="size-buttons">
+                <button class="size-button">XS</button>
+              </div>
+            </div>
+
+
+            <div class="quantity-input">
+              <label>Cantidad:</label>
+              <div class="quantity">
+                <button   class="quantity-button">-</button>
+                <input class="input_quantity" type="number"  [(ngModel)]="product.stock.XS" class="quantity-input-field">
+                <button   class="quantity-button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="type_quantity">
+            <div class="quantity-input">
+              <div class="size-buttons">
+                <button class="size-button">S</button>
+              </div>
+            </div>
+
+
+            <div class="quantity-input">
+              <div class="quantity">
+                <button   class="quantity-button">-</button>
+                <input class="input_quantity" type="number"  [(ngModel)]="product.stock.S" class="quantity-input-field">
+                <button   class="quantity-button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="type_quantity">
+            <div class="quantity-input">
+              <div class="size-buttons">
+                <button class="size-button">M</button>
+              </div>
+            </div>
+
+
+            <div class="quantity-input">
+              <div class="quantity">
+                <button   class="quantity-button">-</button>
+                <input class="input_quantity" type="number" [(ngModel)]="product.stock.M" class="quantity-input-field">
+                <button   class="quantity-button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="type_quantity">
+            <div class="quantity-input">
+              <div class="size-buttons">
+                <button class="size-button">L</button>
+              </div>
+            </div>
+
+
+            <div class="quantity-input">
+              <div class="quantity">
+                <button   class="quantity-button">-</button>
+                <input class="input_quantity" type="number" [(ngModel)]="product.stock.L" class="quantity-input-field">
+                <button   class="quantity-button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="type_quantity">
+            <div class="quantity-input">
+              <div class="size-buttons">
+                <button class="size-button">XL</button>
+              </div>
+            </div>
+
+
+            <div class="quantity-input">
+              <div class="quantity">
+                <button   class="quantity-button">-</button>
+                <input class="input_quantity" type="number" [(ngModel)]="product.stock.XL"  class="quantity-input-field">
+                <button   class="quantity-button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="type_quantity">
+            <div class="quantity-input">
+              <div class="size-buttons">
+                <button class="size-button">XXL</button>
+              </div>
+            </div>
+
+
+            <div class="quantity-input">
+              <div class="quantity">
+                <button   class="quantity-button">-</button>
+                <input class="input_quantity" type="number" [(ngModel)]="product.stock.XXL" class="quantity-input-field">
+                <button   class="quantity-button">+</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <textarea placeholder="Descripción..." [(ngModel)]="product.description"></textarea>
+      </div>
+    </div>
+  </div>
+</div>

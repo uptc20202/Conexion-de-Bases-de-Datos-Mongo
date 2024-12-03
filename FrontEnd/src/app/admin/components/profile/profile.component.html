@@ -1,0 +1,57 @@
+<app-pop-message [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="profile-edit-container">
+  <!-- Columna izquierda -->
+  <div class="column left-column">
+    <div class="field-group">
+      <h3 class="field-title">Nombre (s)</h3>
+      <input placeholder="Nombre de Usuario" [(ngModel)]="name" [ngClass]="{ 'editing': isEditing }" [readonly]="!isEditing" class="input-field" />
+      <!--hr class="field-line" /-->
+    </div>
+
+    <div class="field-group">
+      <h3 class="field-title">Documento</h3>
+      <input placeholder="Digita número de documento" [(ngModel)]="idNumber" [ngClass]="{ 'editing': isEditing }" [readonly]="!isEditing" class="input-field" />
+    </div>
+
+    <div class="field-group">
+      <h3 class="field-title">Contacto</h3>
+      <input placeholder="Digita número de telefono" [(ngModel)]="contact" [ngClass]="{ 'editing': isEditing }" [readonly]="!isEditing" class="input-field" />
+    </div>
+
+    <div class="field-group">
+      <h3 class="field-title">Fecha de Nacimiento</h3>
+      <input [(ngModel)]="birthDate" [readonly]="!isEditing" class="input-field" [ngClass]="{ 'editing': isEditing }" type="date"/>
+    </div>
+  </div>
+
+  <!-- Columna derecha -->
+  <div class="column right-column">
+    <div class="field-group">
+      <h3 class="field-title">Apellidos</h3>
+      <input placeholder="Digita apellido" [(ngModel)]="lastName" [ngClass]="{ 'editing': isEditing }" [readonly]="!isEditing" class="input-field" />
+      <!--hr class="field-line" /-->
+    </div>
+
+    <div class="field-group">
+      <h3 class="field-title">Género</h3>
+      <select [(ngModel)]="gender" [ngClass]="{ 'editing': isEditing }" [disabled]="!isEditing" class="input-field">
+        <option value="M">Hombre</option>
+        <option value="F">Mujer</option>
+        <option value="O">Otro</option>
+      </select>
+    </div>
+
+    <div class="field-group" >
+      <h3 class="field-title">Email</h3>
+      <input [(ngModel)]="email" class="input-field" placeholder="Digite un correo"
+       [ngClass]="{ 'editing': mode=='shop'&&isEditing }" [disabled]="mode=='profile'" />
+
+    </div>
+  </div>
+</div>
+
+<!-- Botón Editar -->
+<div class="edit-button-container">
+  <button (click)="toggleEditMode()" class="edit-button">{{ isEditing ? 'Guardar' : 'Editar' }}</button>
+</div>

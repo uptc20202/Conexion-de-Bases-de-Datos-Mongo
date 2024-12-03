@@ -1,0 +1,174 @@
+.cart-container {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 20px;
+}
+
+.top-section {
+
+  margin: auto;
+}
+
+.line {
+  width: 30px;
+  height: 2px;
+  background-color: #F45B69;
+  margin-right: 20px;
+}
+
+.small-circle {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #F45B69;
+  border-radius: 50%;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.summary-section {
+  margin-top: 30px;
+  background-color: #EAEAEA;
+  padding: 20px;
+  width: 95%;
+  border-radius: 20px;
+}
+
+.product-column {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.price,
+.total {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.quantity-controls button {
+  background-color: #F45B69;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.continue-button {
+  margin-top: 20px;
+  font-size: 12px;
+  color: white;
+  background-color: #F45B69;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+//tabla
+
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.cart-table th, .cart-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.cart-table th {
+  text-align: left;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.price, .total {
+  font-weight: bold;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+}
+
+.quantity button {
+  font-size: 16px;
+  background-color: #f5f5f5;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-summary {
+  margin-top: 20px;
+}
+
+.checkout-button {
+  background-color: #F45B69;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.details{
+  display: flex;
+}
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.totals div {
+  display: flex;
+
+}

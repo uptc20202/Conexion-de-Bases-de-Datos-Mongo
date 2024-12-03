@@ -1,0 +1,23 @@
+.popup-message {
+  position: fixed;
+  top: 20px; /* Ajusta la posición superior */
+  right: 20px; /* Ajusta la posición derecha */
+  background-color: #ffffff; /* Color de fondo verde para indicar éxito */
+  font-family: 'Ubuntu', sans-serif;
+  color: #F45B69;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #F8C1C0;
+  z-index: 1000;
+  display: flex;
+}
+
+.icono{
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 10%;
+}
+
+.icono img{
+  width: 100%;
+}

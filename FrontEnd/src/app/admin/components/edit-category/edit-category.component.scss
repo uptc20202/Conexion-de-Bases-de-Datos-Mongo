@@ -1,0 +1,139 @@
+.txt_upload{
+  font-size: 12px;
+  padding: 10px;
+}
+
+.back{
+  border-color: #F45B69;
+}
+
+.save{
+  border-color: #00B733;
+}
+
+h1, h3, p, label{
+
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1{
+  color: #F45B69;
+}
+
+label{
+  height: 0px;
+}
+
+.options{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+button{
+  font-size: 14px;
+    color: black;
+    margin-left: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid;
+    background-color: white;
+    width: 90px;
+    height: 40px;
+}
+
+button:hover {
+  background-color: lightgray; /* Color de fondo al pasar el cursor */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+button:active {
+  transform: scale(0.95); /* Reducir tamaño al hacer clic */
+  transition: transform 0.1s ease; /* Transición rápida */
+}
+
+input,
+select,
+textarea {
+  width: calc(100% - 20px); /* Ajustar ancho de los controles */
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.category-editor {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin: 10px auto;
+  width: 80%;
+}
+
+.left-section,
+.right-section {
+  width: 45%;
+}
+
+.left-section{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.size-guide,.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.size-guide-item img {
+  width: 100px;
+
+  cursor: pointer;
+}
+
+.size-guide-item .guide-div {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center top;
+  cursor: pointer;
+}
+
+.icons img {
+  width: 100px;
+  margin-top: 10px;
+}
+
+.icons .guide-div {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center top;
+  cursor: pointer;
+}
+
+
+.detele_ico{
+  margin-bottom: 1px;
+  width: 20%;
+  height: 20%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+

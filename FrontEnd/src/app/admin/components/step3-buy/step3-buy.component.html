@@ -1,0 +1,68 @@
+<div class="delivery-container">
+  <div class="address-section" *ngIf="stadeLogin">
+    <h2 class="address-title">ELIGE DIRECCIÓN DE ENTREGA</h2>
+
+  <div class="header">
+    <button mat-button class="header-button right" (click)="stadeCreateAddress=true">Agregar dirección</button>
+  </div>
+
+  <div class="newAddress" *ngIf="stadeCreateAddress">
+    <app-edit-addres (back)="stadeCreateAddress=false;addressByEdit=null"
+    [addressEdit]="addressByEdit"></app-edit-addres>
+  </div>
+
+    <div class="address-list" >
+      <div  *ngFor="let address of addresses; let i = index" class="address-item">
+        <div class="verification-icon" (click)="selectAddress(i)">
+          <img [src]="address.selected ? '../../../assets/shop/check_green.png' : '../../../assets/shop/uncheck_green.png'" alt="Verification Icon">
+        </div >
+
+        <div class="address-edit">
+          <div class="center">
+            <div class="address-info">
+              <p class="text-address">{{ address.address }}, {{ address.municipality }}</p>
+              <p class="text-address">{{ address.neighborhood }}, {{ address.aditional_info }}</p>
+              <p class="text-address">Destinatario: {{ address.name_addressee }}, Teléfono: {{ address.number_phone }}</p>
+            </div>
+
+            <button  (click)="addressByEdit=address;stadeCreateAddress=true"
+            class="edit-button">Editar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf="!stadeLogin" class="address-section noLogin">
+    <div class="newUser">
+      <app-profile [mode]="'shop'" (user)="userNoLogin=$event"></app-profile>
+    </div>
+
+    <div class="newAddress">
+      <app-edit-addres [mode]="'shop'" (address)="addresses[0]=$event"></app-edit-addres>
+    </div>
+
+
+  </div>
+
+  <div class="summary-section">
+    <h2 class="address-title">RESUMEN DE COMPRA</h2>
+    <div class="totals">
+      <div>
+        <p>Subtotal:</p>
+        <p>{{ calculateSubtotal | currency:'COP':'symbol':'1.0-0' }}</p>
+      </div>
+      <div>
+        <p>Costo de Envío:</p>
+        <p>{{ shippingCost | currency:'COP':'symbol':'1.0-0' }}</p>
+      </div>
+      <div>
+        <p>Total:</p>
+        <p>{{ calculateTotal | currency:'COP':'symbol':'1.0-0' }}</p>
+      </div>
+    </div>
+    <button (click)="continueToPayment()" class="continue-button">IR AL PAGO</button>
+  </div>
+</div>

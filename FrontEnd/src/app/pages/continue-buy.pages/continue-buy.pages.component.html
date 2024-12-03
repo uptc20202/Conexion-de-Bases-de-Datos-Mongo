@@ -1,0 +1,15 @@
+
+<app-step2-buy (Subtotal)="calculateSubtotal=$event"
+  (shipping)="shippingCost=$event"
+  (total)="calculateTotal=$event"
+  (step3Btn)="toStep('3')" *ngIf="step2"
+  (aricles)="articles=$event">
+</app-step2-buy>
+
+<app-step3-buy
+  [articles]="articles"
+  [calculateSubtotal]="calculateSubtotal"
+  [shippingCost]="shippingCost"
+  [calculateTotal]="calculateTotal"
+  *ngIf="step3">
+</app-step3-buy>

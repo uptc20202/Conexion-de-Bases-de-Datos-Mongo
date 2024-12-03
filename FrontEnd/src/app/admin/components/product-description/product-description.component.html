@@ -1,0 +1,92 @@
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="bulk">
+  <app-bulk-purchase
+  *ngIf="edit"
+  (edit)="edit = false"
+  (back)="alert()"
+  [price1To6]="product.retail_price"
+  [price7To19]="product.medium_price"
+  [price20OrMore]="product.wholesale_price"
+  [colors]="product.color"
+  [sizes]="product.stock"
+  [productId]="product._id">
+
+</app-bulk-purchase>
+</div>
+
+<div class="product-details" >
+  <div class="gallery">
+
+    <!-- Imágenes adicionales -->
+    <div class="thumbnail-images" (click)="edit = false">
+      <div class="thumbnail" *ngFor="let image of product.images.slice(1, 4)"
+      [style.background-image]="'url(' + image + ')'" alt="Thumbnail Image">
+      </div>
+    </div>
+
+    <!-- Imagen principal del producto -->
+    <div class="main-image" alt="Product Image"
+    [style.background-image]="'url(' + product.images[0] + ')'">
+    </div>
+
+  </div>
+
+  <div class="description">
+    <div class="title">{{ product.name_article }}</div>
+    <div class="reference">REF {{ product.code_article }}</div>
+    <div class="details">
+      <div class="detail">
+        <p class="detail-label">1 - 6 prendas</p>
+        <p class="detail-price">{{ product.retail_price | currency:'COP':'symbol':'1.2' }}</p>
+      </div>
+      <div class="detail">
+        <p class="detail-label">6 - 19 prendas</p>
+        <p class="detail-price">{{ product.medium_price | currency:'COP':'symbol':'1.2' }}</p>
+      </div>
+      <div class="detail">
+        <p class="detail-label">Mayor a 20 prendas</p>
+        <p class="detail-price">{{ product.wholesale_price | currency:'COP':'symbol':'1.2' }}</p>
+      </div>
+      <div class="color">
+        <p>Color: {{ product.color }}</p>
+        <div class="color-circle" [style.background-color]="product.color"></div>
+      </div>
+      <div class="size">
+        <div class="size-space">
+          <p>Talla: {{ product.size }}</p>
+          <span class="size-guide" >Guía de tallas</span>
+        </div>
+
+        <div class="size-buttons">
+          <button class="size-button" *ngFor="let size of product.stock"
+            (click)="selectedSize = size.size; validateStock()"
+            [class.selected]="selectedSize === size.size">
+
+            {{ size.size }}
+
+          </button>
+        </div>
+      </div>
+      <div class="quantity">
+        <p>Cantidad:</p>
+        <button class="quantity-button"
+        (click)="quantity = quantity > 1 ? quantity - 1 : 1; validateStock()">-</button>
+
+        <span >{{ quantity }} </span>
+
+        <button class="quantity-button"
+        (click)="quantity = quantity + 1; validateStock()">+</button>
+
+      </div>
+      <div class="btn-product">
+        <button class="add-to-cart" (click)="addToCart()" >AGREGAR AL CARRITO</button>
+        <button class="buy-wholesale" (click)="edit = true">COMPRAR POR MAYOR</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+

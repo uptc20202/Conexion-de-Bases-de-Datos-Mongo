@@ -1,0 +1,74 @@
+
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+
+<div class="register-form">
+  <h2 class="title">Completa tu información</h2>
+  <p class="description">Ingresa tus datos personales y disfruta de una experiencia de compra más rápida.</p>
+
+  <div class="form-row">
+    <div class="input-group">
+      <label>Nombre</label>
+      <input [(ngModel)]="name" type="text" placeholder="Nombre" class="input-field">
+    </div>
+    <div class="input-group">
+      <label>Apellidos</label>
+      <input [(ngModel)]="lastName" type="text" placeholder="Apellidos" class="input-field">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="input-group">
+      <label>Tipo de Documento</label>
+      <select [(ngModel)]="typeDocumen" class="input-field">
+        <option value="CC">Cédula de Ciudadanía</option>
+        <option value="TI">Tarjeta de Identidad</option>
+        <option value="PAS">Pasaporte</option>
+        <option value="CE">Cédula Extrangeria</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label>N° de Documento</label>
+      <input [(ngModel)]="idNumber" type="text" placeholder="N° de Documento" class="input-field">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="input-group">
+      <label>Celular</label>
+      <input [(ngModel)]="contact" type="text" placeholder="Celular" class="input-field">
+    </div>
+
+    <div class="input-group pass">
+      <label>Género</label>
+      <select [(ngModel)]="gender" class="input-field">
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+        <option value="O">Otro</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="form-row">
+
+
+    <div class="pass" >
+      <label>Fecha de Nacimiento</label>
+      <input [(ngModel)]="birthDate" type="date" class="input-field">
+    </div>
+  </div>
+
+  <div class="checkbox">
+    <input type="checkbox" id="terms" name="terms">
+    <label for="terms">Acepto los TÉRMINOS Y CONDICIONES y autorizo el tratamiento de mis datos personales.</label>
+  </div>
+
+  <div class="btn_register">
+    <button (click)="changeDataUser()" class="register-button">GUARDAR</button>
+  </div>
+
+</div>
+
+
+

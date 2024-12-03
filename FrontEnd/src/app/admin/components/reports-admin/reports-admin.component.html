@@ -1,0 +1,42 @@
+<div class="report-container">
+  <h2>Reporte de ventas</h2>
+  <div class="button-container">
+    <button (click)="loadSales('day')">Reporte diario</button>
+    <button (click)="loadSales('week')">Reporte semanal</button>
+    <button (click)="loadSales('month')">Reporte mensual</button>
+  </div>
+  <div class="sales-info">
+    <div>
+      <p><b>Numero de ventas realizadas:</b></p>
+      <p> {{ salesQuantity }} ventas</p>
+    </div>
+
+    <div>
+      <p><b>Valor Neto de ventas:</b></p>
+      <p>{{ netSalesValue | currency:'COP':'symbol':'1.2' }} </p>
+    </div>
+  </div>
+
+  <p class="table-title"><b>Productos vendidos</b></p>
+
+  <table class="sales-table">
+
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Talla</th>
+        <th>Cantidad</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí se iterarán los productos vendidos -->
+      <tr *ngFor="let product of soldProducts">
+        <td>{{ product.name_article }}</td>
+        <td>{{ product.size }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.total | currency:'COP':'symbol':'1.2'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

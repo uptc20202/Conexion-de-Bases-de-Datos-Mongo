@@ -1,0 +1,56 @@
+<div class="container" >
+  <div class="header">
+    <div class="date"><b>FECHA DEL PEDIDO:</b> {{ sale.createdAt | date:'dd MMMM yyyy' }}</div>
+    <div class="order"><b>PEDIDO:</b> {{ sale._id }}</div>
+  </div>
+
+  <div  class="actions_status">
+    <div [ngClass]="getOrderStatusClass(sale.statusSale)" ><p>{{ sale.statusSale | uppercase}}</p></div>
+    <button (click)="redirectToWhatsApp()" *ngIf="(sale.statusSale | uppercase) =='CONFIRMADA'" class="action-button buy" >
+        PROCEDER AL PAGO
+    </button>
+  </div>
+
+  <div class="main_box">
+    <div class="products">
+      <div class="product-details" *ngFor="let article of sale.articles">
+
+        <h3>Productos</h3>
+        <div class="info_datils_product">
+          <img [src]="article.details.images[0]" alt="{{ article.details?.name_article }}">
+
+          <div class="product-info">
+            <p>{{ article.details.name_article | uppercase}}</p>
+            <p><b>Cantidad:</b> {{ article.quantity }}</p>
+            <p><b>Valor:</b> {{ article.total | currency:'COP':'symbol':'1.2' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="address-details">
+      <h2>Datos de dirección</h2>
+      <p>{{ sale.address.address }}</p>
+      <p>{{ sale.address.department }}, {{ sale.address.municipality }}, {{ sale.address.neighborhood }}</p>
+      <p>{{ sale.address.additional_info }}</p>
+      <p>Destinatario: {{ sale.address.name_addressee }}</p>
+      <p>Teléfono: {{ sale.address.number_phone }}</p>
+    </div>
+
+
+  </div>
+
+
+  <div class="summary">
+    <h2>Resumen de compra</h2>
+    <div class="detail_summary">
+      <p>Subtotal:</p><p> {{ calculateSubtotal() | currency:'COP':'symbol':'1.2' }}</p>
+    </div>
+    <div class="detail_summary">
+      <p>Costo de envío:</p><p> {{ calculateShippingCost() | currency:'COP':'symbol':'1.2' }}</p>
+    </div>
+    <div class="detail_summary">
+      <p>Total:</p><p> {{ calculateTotal() | currency:'COP':'symbol':'1.2' }}</p>
+    </div>
+
+  </div>
+</div>

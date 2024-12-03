@@ -1,0 +1,44 @@
+<div class="product-list" *ngIf="!stateEdit">
+  <div class="header">
+    <div class="title">Ofertas Laborales</div>
+    <button class="new-product-button" (click)="stateEdit=true; editJob(undefined)">Nueva Oferta</button>
+  </div>
+  <div>
+    <input class="input-filter" type="text" placeholder="Filtrar por Nombre de Vacante" [(ngModel)]="filterText">
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre Vacante</th>
+        <th>Posición</th>
+        <th>Salario</th>
+        <th>Ubicación</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of jobs | filter: filterText">
+        <td>{{ job.title }}</td>
+        <td>{{ job.position }}</td>
+        <td>{{ job.salary | currency :'COP' }}</td>
+        <td>{{ job.ubication }}</td>
+        <td class="actions">
+          <button class="bnts-products" (click)="routerNavigate(job._id)" title="Ver">
+            <i class="fas fa-eye"></i>
+            <div class="options-product" [style.background-image]="'url(../../../assets/admin/Eye.png)'"></div>
+          </button>
+          <button class="bnts-products" (click)="editJob(job); stateEdit=true" title="Editar">
+            <i class="fas fa-edit"></i>
+            <div class="options-product" [style.background-image]="'url(../../../assets/admin/edit.png)'"></div>
+          </button>
+          <button class="bnts-products" (click)="deleteJob(job)" title="Borrar">
+            <i class="fas fa-trash"></i>
+            <div class="options-product" [style.background-image]="'url(../../../assets/admin/Trash.png)'"></div>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-create-job [job]="jobByEdit" *ngIf="stateEdit" (back)="stateEdit=false" (newJob)="updateOrAddJob($event)"></app-create-job>

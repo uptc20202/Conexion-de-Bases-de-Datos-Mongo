@@ -1,0 +1,113 @@
+p, a{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+}
+
+.stade div{
+  margin: auto;
+}
+
+.stade{
+  align-items: center;
+  justify-content: center;
+}
+
+button{
+  margin: 10px;
+  border: 1px solid black;
+      border-radius: 20px;
+      background-color: white;
+      font-family: 'Ubuntu', sans-serif;
+      padding: 8px 20px;
+      font-size: 12px;
+}
+
+button:hover {
+  background-color: lightgray; /* Color de fondo al pasar el cursor */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+button:active {
+  transform: scale(0.95); /* Reducir tamaño al hacer clic */
+  transition: transform 0.1s ease; /* Transición rápida */
+}
+
+.sale-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #0505053d;
+  border-radius: 20px;
+
+  background-color: white;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.sale-section {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.sale-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sale-section ul li {
+  text-align: left;
+}
+
+.status-delivered {
+  background-color: green;
+  color: white;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.status-cancelled {
+  background-color: gray;
+  color: white;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.status-preparing {
+  background-color: orange;
+  color: white;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.status-prepared {
+  background-color: blue;
+  color: white;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.status-confirmed {
+  background-color: yellow;
+  color: black;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.status-pending {
+  background-color: red;
+  color: white;
+  padding: 1px;
+  border-radius: 5px;
+}

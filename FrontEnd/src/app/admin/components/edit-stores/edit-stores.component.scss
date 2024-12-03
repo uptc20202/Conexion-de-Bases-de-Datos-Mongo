@@ -1,0 +1,100 @@
+.store-editor {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  position: absolute;
+  background-color: #ffffff;
+  left: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transform: translateX(-50%);
+  border-radius: 30px;
+}
+
+h1,h2,h3,label,p,a,span{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.header {
+
+}
+
+h1 {
+  font-weight: bold;
+  color: #F45B69;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input[type="text"], input[type="file"] ,.rounded-input{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  border-radius: 30px;
+}
+
+.images {
+  display: flex;
+  gap: 10px;
+}
+
+.images img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00B733;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #028a2e;
+}
+
+.detele_ico{
+  margin-bottom: 1px;
+  width: 20%;
+  height: 20%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+
+.upload{
+  margin: 12px;
+}

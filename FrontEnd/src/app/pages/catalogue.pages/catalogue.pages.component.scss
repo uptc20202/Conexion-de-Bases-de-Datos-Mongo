@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Microsoft+Himalaya&display=swap');
+
+h1,h2,h3,label,p,a,span{
+  font-family: 'Microsoft Himalaya', sans-serif;
+  font-size: 19px;
+}
+
+.catalogue-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.product-card {
+  width: 303px;
+  margin-top: 20px;
+}
+
+
+
+/*Categorias*/
+
+.category-carousel {
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: -16px;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.category-item {
+  flex: 0 0 auto;
+  margin-right: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 27px;
+
+
+}
+
+.category-item p{
+  margin-top: 1px;
+}
+
+.category-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #fff;
+  transition: transform 0.3s;
+  width: 11vh;
+  height: 11vh;
+}
+
+.category-item img:hover {
+  transform: scale(1.1);
+}
+
+/*Filtros*/
+.filter-buttons{
+  background: #e9e0e1;
+  border-radius: 30px;
+  border: none;
+  padding: 3px;
+  margin-left: 33px;
+}

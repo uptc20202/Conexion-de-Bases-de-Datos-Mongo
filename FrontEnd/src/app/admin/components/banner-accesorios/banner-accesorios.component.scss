@@ -1,0 +1,46 @@
+.title {
+  border-top: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 40px;
+}
+
+.title h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 40px;
+  color: #280505;
+  border-top: 30px;
+}
+
+.rectangles {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.rectangle {
+  width: 49%; /* Aumentar el ancho al 45% */
+}
+
+.sub-rectangles {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Agregar un margen superior */
+
+}
+
+.sub-rectangle {
+  width: 25%;
+  height: 70vh;
+}
+
+/* Ajuste para rectángulos inferiores */
+.sub-rectangles .sub-rectangle {
+  width: 30%; /* Ancho del 30% */
+}
+
+.sub-rectangle:hover {
+  transform: scale(1.1);
+  box-shadow:10px 8px 10px 10px #0806062a;
+}

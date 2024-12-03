@@ -1,0 +1,63 @@
+<app-pop-message [typeOfAlert]="typeOfAlert" [showSuccessMessage]="showSuccessMessage" [message]="messagePopAd"></app-pop-message>
+
+<div class="store-editor">
+  <div class="header">
+    <h1>{{ isEditMode ? 'Editar Tienda' : isViewMode ? 'Tienda' : 'Añadir Tienda' }}</h1>
+  </div>
+  <div class="content">
+    <div class="form-section">
+      <div class="form-group">
+        <label for="name_store">Nombre Tienda:</label>
+        <input id="name_store" placeholder="Nombre de tienda" [(ngModel)]="store.name_store" type="text" >
+      </div>
+      <div class="form-group">
+        <label for="address">Dirección:</label>
+        <input id="address" placeholder="Dirección" [(ngModel)]="store.address" type="text" [disabled]="isViewMode">
+      </div>
+      <div class="form-group">
+        <label for="department">Departamento:</label>
+        <!--input id="department" placeholder="Departamento" [(ngModel)]="store.department" type="text" hidden="true"-->
+
+        <select id="department" class="rounded-input" [(ngModel)]="store.department" (change)="onDepartamentoSelected(store.department)" [disabled]="isViewMode">
+          <option *ngFor="let dept of departamentos" [value]="dept" >{{ dept }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="city">Ciudad:</label>
+        <!--input id="city" placeholder="Ciudad" [(ngModel)]="store.city" type="text" [disabled]="isViewMode"-->
+
+        <select id="city" class="rounded-input" [(ngModel)]="store.city" [disabled]="isViewMode">
+          <option *ngFor="let municipio of municipios" [value]="municipio" >{{ municipio }}</option>
+        </select>
+      </div>
+      <div class="form-group" *ngIf="isViewMode || isEditMode">
+        <label>Imágenes:</label>
+        <div class="images">
+          <div *ngFor="let img of store.images">
+              <div class="detele_ico" (click)="deleteImg(img)" *ngIf="mode=='edit'"
+              [style.background-image]="'url(../../../assets/general_icons/boton-x.png)'"></div>
+              <img  [src]="img" alt="Store Image"  (click)="viewImage(img)" >
+          </div>
+        </div>
+      </div>
+      <div class="form-group upload" *ngIf="!isViewMode">
+        <label for="images">Cargar Imágenes:</label>
+        <input id="images" type="file" multiple (change)="onFileChange($event)">
+      </div>
+    </div>
+    <div class="button-group">
+      <button *ngIf="isEditMode" (click)="saveChanges()">
+        {{'Guardar Cambios' }}
+      </button>
+
+      <button *ngIf="isCreateMode" (click)="saveStore()">
+        {{ 'Guardar Tienda' }}
+      </button>
+
+      <button *ngIf="isViewMode" (click)="isEditMode=true;isViewMode=false">
+        {{ 'Editar Tienda'  }}
+      </button>
+
+    </div>
+  </div>
+</div>

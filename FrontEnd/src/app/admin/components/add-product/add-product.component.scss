@@ -1,0 +1,264 @@
+.product-container {
+  margin: auto;
+  padding: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.input_quantity{
+  width: 100px;
+  font-size: 8px;
+}
+
+.top-space{
+  display: flex;
+  justify-content: space-between;
+}
+
+.type_quantity{
+  display: flex;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #F45B69;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  font-size: 14px;
+  color: black;
+  margin-left: 10px;
+  border: none;
+  border-radius: 20px; /* Bordes redondeados */
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: #ffff;
+  width: 90px;
+  height: 40px;
+}
+
+.back{
+  border-color: #F45B69;
+}
+
+.save{
+  border-color: #00B733;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-section {
+  width: 15%;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 20px; /* Bordes redondeados */
+}
+
+.right-section {
+  width: 85%; /* Ajustar ancho para dejar espacio al separador vertical */
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 20px; /* Bordes redondeados */
+}
+
+.image-upload {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-column {
+  margin-right: 10px;
+}
+
+.colum_1{
+  width: 800px;
+}
+
+.quantity {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+}
+
+.quantity-button {
+  //font-size: 16px;
+  background-color: #F45B69;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  //width: 40px;
+  //height: 30px;
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+  cursor: pointer;
+  //margin: 0 5px;
+  visibility: hidden;
+}
+
+.size-buttons {
+  margin-top: 2px;
+  display: flex;
+  width: 50px;
+}
+
+.size-button {
+  font-size: 16px;
+  color: #F45B69;
+  background-color: transparent;
+  border: 1px solid #F45B69;
+  border-radius: 20px;
+  padding: 5px 10px;
+
+  cursor: pointer;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: calc(100% - 20px); /* Ajustar ancho de los controles */
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+textarea {
+  height: 100px;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Círculo */
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.quantity-input{
+  margin-right: 10px;
+}
+
+.sizes{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-upload {
+  border: 2px dashed #ccc; /* Borde punteado gris */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Alineación centrada del contenido */
+}
+
+.image-upload:hover {
+  background-color: #f9f9f9; /* Cambio de color de fondo al pasar el cursor */
+  cursor: pointer; /* Cursor de selección al pasar por encima */
+}
+
+.image-upload label {
+  font-size: 16px;
+  color: #888;
+}
+
+.image-upload input[type="file"] {
+  display: none; /* Ocultar el input de tipo file */
+}
+
+/* Estilo para la imagen previa (opcional) */
+.image-preview {
+  width: 100%;
+  margin-top: 20px; /* Espaciado superior */
+}
+
+.image-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.image-preview {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: relative;
+}
+
+.upload-container {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-container:hover {
+  background-color: #f9f9f9;
+}
+
+.upload-container label {
+  font-size: 16px;
+  color: #888;
+}
+
+.upload-container input[type="file"] {
+  display: none;
+}
+
+.thumbnail {
+  margin-bottom: 1px;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+}
+
+.thumbnail-images {
+  display: flex;
+  flex-direction: column;
+}
+
+.detele_ico{
+  margin-bottom: 1px;
+  width: 10%;
+  height: 10%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}

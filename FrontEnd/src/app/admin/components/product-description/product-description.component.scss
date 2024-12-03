@@ -1,0 +1,172 @@
+.product-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery {
+  width: 60%;
+  display: flex;
+}
+
+.main-image {
+  width: 70%;
+  position: relative;
+  height: 80vh;
+  background-size: cover;
+  background-position: center top;
+  margin-left: 20px;
+}
+
+.thumbnail-images {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.thumbnail {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 26vh;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+}
+
+.description {
+  width: 40%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.reference {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.detail {
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.detail-label {
+  margin: 0px;
+  font-size: 18px;
+}
+
+.detail-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.color {
+  display: flex;
+  align-items: center;
+}
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.size {
+  //margin-top: 10px;
+}
+
+.size p {
+  font-size: 22px;
+}
+
+.size-guide {
+  font-size: 18px;
+  color: #F45B69;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.size-buttons {
+  margin-top: 10px;
+  display: flex;
+}
+
+.size-button {
+  font-size: 16px;
+  color: #F45B69;
+  background-color: transparent;
+  border: 1px solid #F45B69;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.size-space{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.quantity-button {
+  font-size: 16px;
+  background-color: #F45B69;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.add-to-cart,
+.buy-wholesale {
+  margin-top: 20px;
+  font-size: 13px;
+  color: white;
+  background-color: #F45B69;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn-product{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.size-button.selected {
+  background-color: #F45B69;
+  color: white;
+}
+
+
+.bulk{
+  position: absolute;
+  transform: translateX(65vw);
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow:-1px 0px 11px 12px rgb(0 0 0 / 27%);
+}

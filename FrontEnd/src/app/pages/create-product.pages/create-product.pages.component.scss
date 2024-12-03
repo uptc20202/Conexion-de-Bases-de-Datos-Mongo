@@ -1,0 +1,36 @@
+/* Estilos para los botones */
+.create_space{
+  display: flex;
+    flex-direction: column;
+}
+
+.button {
+  font-family: 'Ubuntu', sans-serif; /* Fuente Ubuntu */
+  font-size: 18px; /* Tamaño de la fuente */
+  padding: 10px 20px; /* Padding interno */
+  height: 9vh;
+  border: none; /* Sin borde */
+  background-color: #ffffff; /* Color de fondo azul */
+  color: #000000; /* Color de texto blanco */
+  cursor: pointer; /* Cursor de apuntar */
+  box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.2); /* Sombra con ángulo de 90 grados */
+  transition: transform 0.3s ease-in-out; /* Transición suave al hacer hover */
+  width: 100%;
+}
+
+/* Estilos al hacer hover sobre el botón */
+.button:hover {
+  transform: translate(2px, 2px); /* Desplazamiento al hacer hover */
+}
+
+/* Contenedor para alinear los botones horizontalmente */
+.options {
+  margin-top: 20px;
+  display: block;
+  width: 300px;
+  display: flex;
+}
+
+.edit{
+  width: 90%;
+}

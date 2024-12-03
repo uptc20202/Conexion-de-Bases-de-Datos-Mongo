@@ -1,0 +1,15 @@
+
+
+<div class="create_space">
+
+  <div class="options">
+    <button class="button" (click)="changePage(1)">Productos</button>
+    <button class="button" (click)="changePage(2)">Categorías</button>
+  </div>
+
+  <div class="edit">
+    <app-read-product-admin *ngIf="position"></app-read-product-admin>
+    <app-category-list *ngIf="!position"></app-category-list>
+  </div>
+
+</div>

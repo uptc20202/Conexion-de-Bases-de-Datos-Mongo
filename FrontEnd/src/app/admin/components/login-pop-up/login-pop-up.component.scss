@@ -1,0 +1,80 @@
+.container {
+  text-align: center;
+}
+
+.title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 35px; /* Tamaño de fuente actualizado */
+  color: #F45B69; /* Color actualizado */
+}
+
+.divider {
+  width: 80%;
+  border-bottom: 1px solid #666666; /* Color de la barra divisor actualizado */
+  opacity: 0.63; /* Opacidad actualizada */
+  margin: 20px auto;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  width: 80%;
+  margin-left: auto; /* Centra el elemento en el lado izquierdo */
+  margin-right: auto; /* Centra el elemento en el lado derecho */
+}
+
+
+.input-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  text-align: left;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #DEE2E6;
+  border: 1px solid #F45B69;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+}
+
+.forgot-password {
+  color: #0085FF;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  text-align: right;
+  display: block;
+  margin-top: 5px;
+  word-wrap: break-word; /* Permite que el texto se ajuste dentro del contenedor */
+}
+
+.login-button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #F45B69;
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.login-button:hover{
+  background-color: #542025;
+}
+
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  width: 400px; /* Ancho fijo */
+}

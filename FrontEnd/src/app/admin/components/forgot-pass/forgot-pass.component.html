@@ -1,0 +1,21 @@
+<div class="recover-password-container">
+  <div class="field-group">
+    <h3 class="field-title">Recuperar Contraseña</h3>
+    <input
+      placeholder="Correo Electrónico"
+      [(ngModel)]="email"
+      (ngModelChange)="validateEmail()"
+      [ngClass]="{ 'invalid': !isValidEmail && emailTouched }"
+      class="input-field"
+      type="email"
+    />
+    <div *ngIf="!isValidEmail && emailTouched" class="error-message">
+      Por favor, ingrese un correo electrónico válido.
+    </div>
+  </div>
+
+  <!-- Botón Enviar -->
+  <div class="send-button-container">
+    <button (click)="recoverPassword()" [disabled]="!isValidEmail" class="send-button">Enviar</button>
+  </div>
+</div>
